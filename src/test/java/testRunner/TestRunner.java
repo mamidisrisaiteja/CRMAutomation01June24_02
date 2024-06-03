@@ -5,8 +5,11 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/main/java/features"},
-glue = {"stepDefinitions"})
+@CucumberOptions(features = {"src/test/resources/features"},
+glue = {"stepDefinitions"},
+plugin= {"pretty","json:target/report2.json"},
+monochrome = true,
+publish=true)
 
 public class TestRunner {
 	
